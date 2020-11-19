@@ -1,11 +1,11 @@
 <template>
 	<div id="app">
-	
+		<Recipes :recipes="recipes" /> 
 	</div>
 </template>
 
 <script>
-
+import Recipes from './components/Recipes.vue';
 
 export default {
 	name: 'App',
@@ -13,7 +13,7 @@ export default {
      Recipes
     
     },
-props: ['recipes'],
+	props: ['recipes'],
 
 	created() {
 		const url = 'http://www.recipepuppy.com/api/';
