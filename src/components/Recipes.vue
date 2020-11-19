@@ -1,8 +1,8 @@
 <template>
 	<div class="container" >
 		<div class="recipe-card" v-for="recipe in recipes" :key="recipe.title">
-			<a :href="recipe.href"><h3>{{ recipe.title }}</h3></a>
-			<img :src="recipe.thumbnail" />
+			<a :href="recipe.href" :title="titleMsg"><h3>{{ recipe.title }}</h3></a>
+			<a :href="recipe.href" :title="titleMsg"><img :src="recipe.thumbnail" /></a>
 			<p><span>Ingredients:</span>{{ recipe.ingredients }}</p>
 		</div>
 	</div>
@@ -11,7 +11,13 @@
 <script>
 
 export default {
-    name: 'Recipes',
+	name: 'Recipes',
+	data(){
+		return {
+			titleMsg: "For fully description click here"
+		}
+	},
+	
     props: ['recipes']
    
 };
@@ -19,7 +25,7 @@ export default {
 
 <style scoped>
 .container {
-    margin: 60px auto;
+    margin: 0 auto;
     max-width: 1200px; 
 	display: flex;
 	flex-wrap: wrap;
@@ -30,7 +36,7 @@ export default {
 	margin: 16px;
 	padding: 16px;
 	border: 1px solid black;
-  border-radius: 5px;
+	border-radius: 5px;
 }
 h3 {
   font-size: 22px;
@@ -39,6 +45,8 @@ a {
   text-decoration: none;
   color: green;
 }
+
+
 p {
   font-size: 16px;
   letter-spacing: 0.5;
