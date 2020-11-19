@@ -1,17 +1,22 @@
 <template>
 	<div id="app">
+		<Header />
 		<Recipes :recipes="recipes" /> 
+		<Footer />
 	</div>
 </template>
 
 <script>
+import Header from './components/Layout/Header';
 import Recipes from './components/Recipes.vue';
+import Footer from './components/Layout/Footer';
 
 export default {
 	name: 'App',
 	components: { 
-     Recipes
-    
+		Header,	
+		Recipes,
+		Footer
     },
 	props: ['recipes'],
 
