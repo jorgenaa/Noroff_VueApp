@@ -14,7 +14,7 @@ export default {
 <style scoped>
     header {
         height: 100px;
-        background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+        background-image: linear-gradient(to top, #0bb86d 0%, #40c59b 100%);
     }
     h1 {
         font-size: 48px;
