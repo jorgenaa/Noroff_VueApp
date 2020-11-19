@@ -9,7 +9,12 @@
 
 export default {
 	name: 'App',
-	
+	components: { 
+     Recipes
+    
+    },
+props: ['recipes'],
+
 	created() {
 		const url = 'http://www.recipepuppy.com/api/';
 
