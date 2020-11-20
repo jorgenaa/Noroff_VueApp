@@ -34,7 +34,7 @@ export default {
 	},
 	methods: {
 		sort() {
-			this.recipes.sort((a, b) => (a > b ? 1 : -1));
+			this.recipes.sort((a, b) => (a.title > b.title ? 1 : -1));
 		},
 	},
 };
