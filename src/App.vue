@@ -1,7 +1,9 @@
 <template>
 	<div id="app">
 		<Header />
-		<Recipes :recipes="recipes" /> 
+		<Recipes :recipes="recipes" />
+
+		{{ sort() }}
 		<Footer />
 	</div>
 </template>
@@ -13,11 +15,11 @@ import Footer from './components/Layout/Footer';
 
 export default {
 	name: 'App',
-	components: { 
-		Header,	
+	components: {
+		Header,
 		Recipes,
-		Footer
-    },
+		Footer,
+	},
 	props: ['recipes'],
 
 	created() {
@@ -30,6 +32,11 @@ export default {
 			})
 			.catch(err => console.log(err));
 	},
+	methods: {
+		sort() {
+			this.recipes.sort((a, b) => (a > b ? 1 : -1));
+		},
+	},
 };
 </script>
 
@@ -39,8 +46,5 @@ export default {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	color: #2c3e50;
-	
 }
-
-
 </style>
